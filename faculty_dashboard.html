@@ -1031,7 +1031,7 @@ const UNITS = [
   { label: 'Unit I — Basic Elements of DSP', lectures: [1,2,3,4,5,6,7] },
   { label: 'Unit II — Fast Fourier Transforms', lectures: [8,9,10,11,12,13,14] },
   { label: 'Unit III — Digital Filter Synthesis / Structures', lectures: [15,16,17,18,19,20] },
-  { label: 'Unit IV — Digital Filter Design', lectures: [21,22,23,24,25,26,27,28,29,30] },
+  { label: 'Unit IV — Digital Filter Design', lectures: [21,22,23,24,25,26] },
 ];
 
 const LECTURE_META = {
@@ -1055,16 +1055,12 @@ const LECTURE_META = {
   18: { title: 'IIR Cascade Realization & SOS',      tag: 'Biquad Sections, Pole-Zero Pairing' },
   19: { title: 'IIR Parallel Realization',           tag: 'Partial Fraction Expansion, Parallel SOS' },
   20: { title: 'Lattice & Lattice-Ladder & FWE',     tag: 'PARCOR km, Stability |km|<1, Quantization' },
-  21: { title: 'FIR Specifications & 4 Types',       tag: 'Generalized Linear Phase, Types 1-4, Zeros' },
-  22: { title: 'FIR Windowing: Rect, Bartlett, Hann',tag: 'Ideal Sinc hd[n], Gibbs Phenomenon' },
-  23: { title: 'Hamming, Blackman & Kaiser Windows', tag: 'Stopband Attenuation, Kaiser β, LPF/HPF' },
-  24: { title: 'FIR Design: Frequency Sampling',     tag: 'Sampled Hd(e^jω), IDFT, Transition Optimization' },
-  25: { title: 'Moving Average & FIR vs IIR',        tag: 'Comb Filters, Smoothing, FIR vs IIR Matrix' },
-  26: { title: 'Analog Prototypes: Butterworth/Cheby',tag: 'Maximally Flat, Equiripple, Order N, Poles' },
-  27: { title: 'Impulse Invariance Method',          tag: 's to z Mapping, Aliasing Limitation, LPF' },
-  28: { title: 'Bilinear Transformation (BLT)',      tag: 'Trapezoidal Rule, Warping, Prewarping' },
-  29: { title: 'Matched Z-Transform & Spectral Xforms',tag: 'Pole-Zero Mapping, Digital Transformations' },
-  30: { title: 'DSP Applications: ANC, LMS & Review',tag: 'Equalization, Adaptive Filter, LMS, Review' },
+  21: { title: 'Linear-Phase FIR & Moving Avg',      tag: 'Generalized Linear Phase, Types 1-4, Zeros, Moving Avg' },
+  22: { title: 'FIR Design: Windowing Method',       tag: 'Ideal Sinc, Gibbs, Rect, Hann, Hamming, Blackman, Kaiser' },
+  23: { title: 'FIR Design: Frequency Sampling',     tag: 'Sampled Hd(e^jω), IDFT, Transition Optimization' },
+  24: { title: 'IIR Design: Impulse Invariance',     tag: 'Analog Prototypes, s to z Mapping, Aliasing Limitation' },
+  25: { title: 'IIR Design: Bilinear & Matched Z',   tag: 'Bilinear Transformation, Warping, Prewarping, Matched Z' },
+  26: { title: 'Equalization, ANC & Adaptive FIR',   tag: 'Channel Equalizer, LMS, Noise Cancellation' },
 };
 
 let currentLecture = null;
@@ -1219,9 +1215,9 @@ function buildTOC(container) {
 
 // ── PROGRESS ──
 function updateProgress() {
-  const pct = Math.round((visitedLectures.size / 30) * 100);
+  const pct = Math.round((visitedLectures.size / 26) * 100);
   document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = `${visitedLectures.size} / 30`;
+  document.getElementById('progressLabel').textContent = `${visitedLectures.size} / 26`;
 }
 function updateReadProgress() {
   // Subtle scroll indicator (no-op for now — MathJax reflow makes offsetHeight unreliable)
@@ -1231,7 +1227,7 @@ function updateReadProgress() {
 function navigateLecture(dir) {
   if (!currentLecture) return;
   const next = currentLecture + dir;
-  if (next >= 1 && next <= 30) loadLecture(next);
+  if (next >= 1 && next <= 26) loadLecture(next);
 }
 
 // ── FONT SIZE ──
@@ -1298,7 +1294,7 @@ document.addEventListener('keydown', e => {
 function checkUrlParam() {
   const params = new URLSearchParams(location.search);
   const l = parseInt(params.get('lecture'));
-  if (l >= 1 && l <= 30) loadLecture(l);
+  if (l >= 1 && l <= 26) loadLecture(l);
 }
 
 // ── INIT ──

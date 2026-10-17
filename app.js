@@ -1205,11 +1205,7 @@ function initTabSwitching() {
         23: document.getElementById("l23-page"),
         24: document.getElementById("l24-page"),
         25: document.getElementById("l25-page"),
-        26: document.getElementById("l26-page"),
-        27: document.getElementById("l27-page"),
-        28: document.getElementById("l28-page"),
-        29: document.getElementById("l29-page"),
-        30: document.getElementById("l30-page")
+        26: document.getElementById("l26-page")
     };
     const title = document.getElementById("current-lecture-title");
     const subtitle = document.getElementById("current-lecture-subtitle");
@@ -1219,152 +1215,132 @@ function initTabSwitching() {
         1: {
             title: "Lecture 1: Course Introduction & DT Signals",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_01.pdf"
+            pdf: "lecture_01.pdf?v=2"
         },
         2: {
             title: "Lecture 2: LTI Systems, Convolution, Stability & Difference Equations",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_02.pdf"
+            pdf: "lecture_02.pdf?v=2"
         },
         3: {
             title: "Lecture 3: The Discrete-Time Fourier Transform (DTFT)",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_03.pdf"
+            pdf: "lecture_03.pdf?v=2"
         },
         4: {
             title: "Lecture 4: Frequency Response, Magnitude/Phase & Group Delay",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_04.pdf"
+            pdf: "lecture_04.pdf?v=2"
         },
         5: {
             title: "Lecture 5: Z-Transform, ROC & Common Pairs",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_05.pdf"
+            pdf: "lecture_05.pdf?v=2"
         },
         6: {
             title: "Lecture 6: Inverse Z-Transform & Stability Analysis",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_06.pdf"
+            pdf: "lecture_06.pdf?v=2"
         },
         7: {
             title: "Lecture 7: The Discrete Fourier Transform (DFT) & Matrix Formulation",
             subtitle: "Unit I: Basic Elements of DSP & recommended duration: 40 minutes",
-            pdf: "lecture_07.pdf"
+            pdf: "lecture_07.pdf?v=2"
         },
         8: {
             title: "Lecture 8: Properties of the DFT & Circular Convolution",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_08.pdf"
+            pdf: "lecture_08.pdf?v=2"
         },
         9: {
             title: "Lecture 9: Direct DFT Computational Complexity & FFT Motivation",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_09.pdf"
+            pdf: "lecture_09.pdf?v=2"
         },
         10: {
             title: "Lecture 10: Radix-2 Decimation-in-Time FFT & Bit Reversal",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_10.pdf"
+            pdf: "lecture_10.pdf?v=2"
         },
         11: {
             title: "Lecture 11: Radix-2 Decimation-in-Frequency FFT & DIT/DIF Comparison",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_11.pdf"
+            pdf: "lecture_11.pdf?v=2"
         },
         12: {
             title: "Lecture 12: Radix-4 FFT Algorithm & Computational Complexity",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_12.pdf"
+            pdf: "lecture_12.pdf?v=2"
         },
         13: {
             title: "Lecture 13: Linear Filtering of Long Sequences — Overlap-Add Method",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_13.pdf"
+            pdf: "lecture_13.pdf?v=2"
         },
         14: {
             title: "Lecture 14: Linear Filtering of Long Sequences — Overlap-Save Method",
             subtitle: "Unit II: Fast Fourier Transforms & recommended duration: 40 minutes",
-            pdf: "lecture_14.pdf"
+            pdf: "lecture_14.pdf?v=2"
         },
         15: {
             title: "Lecture 15: Digital Filter Realization Basics & FIR Direct/Cascade Forms",
             subtitle: "Unit III: Digital Filter Synthesis / Structures & recommended duration: 40 minutes",
-            pdf: "lecture_15.pdf"
+            pdf: "lecture_15.pdf?v=2"
         },
         16: {
             title: "Lecture 16: Linear-Phase FIR realization & Frequency-Sampling Structure",
             subtitle: "Unit III: Digital Filter Synthesis / Structures & recommended duration: 40 minutes",
-            pdf: "lecture_16.pdf"
+            pdf: "lecture_16.pdf?v=2"
         },
         17: {
             title: "Lecture 17: IIR Filter Realization — Direct Forms I, II & Transposed Forms",
             subtitle: "Unit III: Digital Filter Synthesis / Structures & recommended duration: 40 minutes",
-            pdf: "lecture_17.pdf"
+            pdf: "lecture_17.pdf?v=2"
         },
         18: {
             title: "Lecture 18: IIR Cascade Realization & Pole-Zero Pairing",
             subtitle: "Unit III: Digital Filter Synthesis / Structures & recommended duration: 40 minutes",
-            pdf: "lecture_18.pdf"
+            pdf: "lecture_18.pdf?v=2"
         },
         19: {
             title: "Lecture 19: IIR Parallel Realization",
             subtitle: "Unit III: Digital Filter Synthesis / Structures & recommended duration: 40 minutes",
-            pdf: "lecture_19.pdf"
+            pdf: "lecture_19.pdf?v=2"
         },
         20: {
             title: "Lecture 20: Lattice and Lattice-Ladder Structures & Finite Word-Length Effects",
             subtitle: "Unit III: Digital Filter Synthesis / Structures & recommended duration: 40 minutes",
-            pdf: "lecture_20.pdf"
+            pdf: "lecture_20.pdf?v=2"
         },
         21: {
-            title: "Lecture 21: FIR Specifications & Linear-Phase Conditions",
+            title: "Lecture 21: Linear-Phase FIR Filters, Characteristics, Zeros & Moving Average Filters",
             subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_21.pdf"
+            pdf: "lecture_21_student.pdf?v=2"
         },
         22: {
-            title: "Lecture 22: FIR Design via Windowing (Rectangular & Hann)",
+            title: "Lecture 22: Design of FIR Filters Using the Windowing Method",
             subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_22.pdf"
+            pdf: "lecture_22_student.pdf?v=2"
         },
         23: {
-            title: "Lecture 23: Hamming & Blackman Windows and Comparative Analysis",
+            title: "Lecture 23: Design of FIR Filters Using Frequency Sampling",
             subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_23.pdf"
+            pdf: "lecture_23_student.pdf?v=2"
         },
         24: {
-            title: "Lecture 24: FIR Design via Frequency-Sampling",
+            title: "Lecture 24: Design of IIR Filters from Analog Filters — Impulse Invariance",
             subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_24.pdf"
+            pdf: "lecture_24_student.pdf?v=2"
         },
         25: {
-            title: "Lecture 25: FIR vs IIR & Moving Average Filters",
+            title: "Lecture 25: Design of IIR Filters — Bilinear Transformation & Matched Z-Transform",
             subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_25.pdf"
+            pdf: "lecture_25_student.pdf?v=2"
         },
         26: {
-            title: "Lecture 26: IIR Filter Design: Analog Approximations",
+            title: "Lecture 26: Equalization, Noise Cancellation & Adaptive FIR Filters",
             subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_26.pdf"
-        },
-        27: {
-            title: "Lecture 27: The Impulse Invariance Method",
-            subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_27.pdf"
-        },
-        28: {
-            title: "Lecture 28: The Bilinear Transformation Method",
-            subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_28.pdf"
-        },
-        29: {
-            title: "Lecture 29: Matched z-Transform & Spectral Transformations",
-            subtitle: "Unit IV: Digital Filter Design & recommended duration: 40 minutes",
-            pdf: "lecture_29.pdf"
-        },
-        30: {
-            title: "Lecture 30: DSP Applications & Course Review",
-            subtitle: "Applications & recommended duration: 40 minutes",
-            pdf: "lecture_30.pdf"
+            pdf: "lecture_26_student.pdf?v=2"
         }
     };
 

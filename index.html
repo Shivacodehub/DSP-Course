@@ -179,70 +179,42 @@
                     <div class="lecture-item" data-lecture="21">
                         <div class="lecture-num">L21</div>
                         <div class="lecture-info">
-                            <div class="lecture-title">FIR Specifications &amp; Types</div>
+                            <div class="lecture-title">Linear Phase FIR &amp; Moving Avg</div>
                             <div class="lecture-meta">FIR Design &bull; 40 mins</div>
                         </div>
                     </div>
                     <div class="lecture-item" data-lecture="22">
                         <div class="lecture-num">L22</div>
                         <div class="lecture-info">
-                            <div class="lecture-title">Windowing (Rect/Hann)</div>
+                            <div class="lecture-title">FIR Design: Windowing Method</div>
                             <div class="lecture-meta">FIR Design &bull; 40 mins</div>
                         </div>
                     </div>
                     <div class="lecture-item" data-lecture="23">
                         <div class="lecture-num">L23</div>
                         <div class="lecture-info">
-                            <div class="lecture-title">Windowing (Hamming/Blackman)</div>
+                            <div class="lecture-title">FIR Design: Frequency Sampling</div>
                             <div class="lecture-meta">FIR Design &bull; 40 mins</div>
                         </div>
                     </div>
                     <div class="lecture-item" data-lecture="24">
                         <div class="lecture-num">L24</div>
                         <div class="lecture-info">
-                            <div class="lecture-title">Frequency Sampling Design</div>
-                            <div class="lecture-meta">FIR Design &bull; 40 mins</div>
+                            <div class="lecture-title">IIR Design: Impulse Invariance</div>
+                            <div class="lecture-meta">IIR Design &bull; 40 mins</div>
                         </div>
                     </div>
                     <div class="lecture-item" data-lecture="25">
                         <div class="lecture-num">L25</div>
                         <div class="lecture-info">
-                            <div class="lecture-title">FIR vs IIR &amp; Moving Avg</div>
-                            <div class="lecture-meta">Filter Design &bull; 40 mins</div>
+                            <div class="lecture-title">IIR Design: Bilinear &amp; Matched Z</div>
+                            <div class="lecture-meta">IIR Design &bull; 40 mins</div>
                         </div>
                     </div>
                     <div class="lecture-item" data-lecture="26">
                         <div class="lecture-num">L26</div>
                         <div class="lecture-info">
-                            <div class="lecture-title">Butterworth &amp; Chebyshev</div>
-                            <div class="lecture-meta">IIR Design &bull; 40 mins</div>
-                        </div>
-                    </div>
-                    <div class="lecture-item" data-lecture="27">
-                        <div class="lecture-num">L27</div>
-                        <div class="lecture-info">
-                            <div class="lecture-title">Impulse Invariance Method</div>
-                            <div class="lecture-meta">IIR Design &bull; 40 mins</div>
-                        </div>
-                    </div>
-                    <div class="lecture-item" data-lecture="28">
-                        <div class="lecture-num">L28</div>
-                        <div class="lecture-info">
-                            <div class="lecture-title">Bilinear Transformation</div>
-                            <div class="lecture-meta">IIR Design &bull; 40 mins</div>
-                        </div>
-                    </div>
-                    <div class="lecture-item" data-lecture="29">
-                        <div class="lecture-num">L29</div>
-                        <div class="lecture-info">
-                            <div class="lecture-title">IIR Filter Transformations</div>
-                            <div class="lecture-meta">IIR Design &bull; 40 mins</div>
-                        </div>
-                    </div>
-                    <div class="lecture-item" data-lecture="30">
-                        <div class="lecture-num">L30</div>
-                        <div class="lecture-info">
-                            <div class="lecture-title">DSP Applications &amp; Review</div>
+                            <div class="lecture-title">Equalization, ANC &amp; Adaptive FIR</div>
                             <div class="lecture-meta">Applications &bull; 40 mins</div>
                         </div>
                     </div>
@@ -260,7 +232,7 @@
                     <p id="current-lecture-subtitle">Unit I: Basic Elements of DSP &bull; Recommended Duration: 40 Minutes</p>
                 </div>
                 <div class="header-actions">
-                    <a id="btn-download-pdf" href="lecture_01.pdf" class="btn" target="_blank">
+                    <a id="btn-download-pdf" href="lecture_01.pdf?v=2" class="btn" target="_blank">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                         Download PDF Notes
                     </a>
@@ -4868,8 +4840,8 @@ floor + 1\) (a 50% savings in DSP MAC hardware).
                     </section>
                 </div> <!-- End of l20-page -->
 
-                <div id="l21-page" class="lecture-page" style="display: none;">
-                    <!-- L21 Section 1: Lecture Plan -->
+                                <div id="l21-page" class="lecture-page" style="display: none;">
+<!-- L21 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5088,10 +5060,156 @@ floor + 1\) (a 50% savings in DSP MAC hardware).
                                 The zero must exist as part of the reciprocal conjugate quadruplet: \(\{0.5e^{\pm j\pi/3}, \; 2.0e^{\pm j\pi/3}\}\).
                             </div>
                         </div>
+
+                    <!-- L21 Added: Moving-Average Filters Theory & Sandbox -->
+<!-- L25 Section 1: Lecture Plan -->
+                    <section class="card">
+                        <div class="card-title">Lecture Plan &amp; Timing</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="time-slot">00:00 - 10:00</div>
+                                <div class="timeline-desc">Welcome: Architectural comparison. Non-recursive (FIR) vs. recursive (IIR) filtering systems.</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="time-slot">10:00 - 25:00</div>
+                                <div class="timeline-desc">Moving Average (MA) Filter: Z-transform poles and zeros, mathematical cancellation, and Dirichlet responses.</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="time-slot">25:00 - 35:00</div>
+                                <div class="timeline-desc">FIR vs IIR Table: detailed comparison of phase linearity, stability, filter orders, and quantization errors.</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="time-slot">35:00 - 40:00</div>
+                                <div class="timeline-desc">Interactive MA pole-zero placement sandbox, checkpoints, and summary.</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card">
+                        <div class="card-title">Core Theory: Moving-Average Filters &amp; FIR vs. IIR Comparison</div>
+                        <div class="theory-text">
+                            Moving average (MA) filters are the most common simple FIR smoothing filters. Understanding the structural trade-offs between FIR and IIR architectures is central to system-level DSP design.
+                        </div>
+
+                        <div class="math-card">
+                            <strong>Moving-Average Filter Theory</strong>
+                            \[ y[n] = rac{1}{M} \sum_{k=0}^{M-1} x[n-k] \implies H(z) = rac{1 - z^{-M}}{M(1 - z^{-1})} \]
+                            \[ H(e^{j\omega}) = rac{1}{M} rac{\sin(\omega M / 2)}{\sin(\omega / 2)} e^{-j\omega(M-1)/2} \]
+                            The zeros are located on the unit circle at \(z_k = e^{j 2\pi k / M}\) for \(k = 1, 2, \dots, M-1\). The pole at \(z=1\) cancels the zero at \(z=1\).
+                        </div>
+
+                        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:10px;">
+                            <thead>
+                                <tr style="background-color: #0f172a; text-align: left;">
+                                    <th style="padding: 8px; border: 1px solid #334155;">Criteria</th>
+                                    <th style="padding: 8px; border: 1px solid #334155;">FIR Filter</th>
+                                    <th style="padding: 8px; border: 1px solid #334155;">IIR Filter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #1e293b;">
+                                    <td style="padding: 8px; border: 1px solid #334155;">Phase Linearity</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Exact strictly linear phase available</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Non-linear phase (phase distortion)</td>
+                                </tr>
+                                <tr style="background-color: #0f172a;">
+                                    <td style="padding: 8px; border: 1px solid #334155;">Stability</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Inherently stable (all poles at \(z=0\))</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Feedback poles can shift outside \(|z|=1\)</td>
+                                </tr>
+                                <tr style="background-color: #1e293b;">
+                                    <td style="padding: 8px; border: 1px solid #334155;">Filter Order / Efficiency</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">High order \(N\) required for sharp cutoff</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Much lower order \(N\) (5\(\times\) to 10\(\times\) fewer MACs)</td>
+                                </tr>
+                                <tr style="background-color: #0f172a;">
+                                    <td style="padding: 8px; border: 1px solid #334155;">Limit Cycles</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Free from feedback limit cycles</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Susceptible to overflow &amp; deadband oscillations</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- L25 Section 2: Moving Average Sandbox -->
+                    <section class="card">
+                        <div class="card-title">Moving Average Filter Sandbox &amp; Z-Plane</div>
+                        <p class="theory-text">
+                            Analyze the system function of the MA filter: 
+                            \(H(z) = \frac{1 - z^{-N}}{N(1 - z^{-1})}\).
+                            Observe the distribution of poles and zeros on the Z-Plane (left plot). 
+                            Adjust the filter length \(N\). Notice that the zero at \(z=1\) is mathematically canceled by the pole at \(z=1\), 
+                            which keeps the filter stable and maintains a passband gain of \(1.0\) at \(\omega = 0\). 
+                            The right plot displays the continuous magnitude response \(|H(e^{j\omega})|\) (Dirichlet kernel).
+                        </p>
+
+                        <div class="sandbox-grid" style="grid-template-columns: 1fr 1fr 280px; gap: 20px;">
+                            <!-- Column 1: Z-plane plot -->
+                            <div class="plot-container" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                                <h4>Z-Plane Pole-Zero Plot</h4>
+                                <canvas id="canvas-l25-zplane" style="width: 100%; height: 230px;"></canvas>
+                            </div>
+
+                            <!-- Column 2: Magnitude Response -->
+                            <div class="plot-container" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                                <h4>Magnitude Response</h4>
+                                <canvas id="canvas-l25-response" style="width: 100%; height: 230px;"></canvas>
+                            </div>
+
+                            <!-- Column 3: Controls -->
+                            <div class="controls-panel">
+                                <h3>Moving Average Settings</h3>
+                                <hr style="border-color: var(--border-color); margin: 8px 0 12px 0;">
+
+                                <div class="control-group">
+                                    <label>Filter Length \(N\): <span id="val-l25-n" class="control-val">8</span></label>
+                                    <input type="range" id="slider-l25-n" min="2" max="32" value="8" step="1">
+                                </div>
+
+                                <div class="math-card" style="margin-top: 25px; font-size: 0.72rem; line-height: 1.6;">
+                                    <strong>Filter Analysis:</strong>
+                                    <div id="val-l25-metrics" style="margin-top: 5px; font-family: monospace;">
+                                        Poles at Origin: 7<br>
+                                        Zeros on Circle: 7<br>
+                                        First Null: 0.25 \(\pi\) rad
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- L25 Section 3: Checkpoints -->
+                    <section class="card">
+                        <div class="card-title">Interactive Lecture Checkpoints</div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <span class="accordion-title">Checkpoint 1: Explain how an IIR filter can meet the same magnitude specifications as an FIR filter but with a much lower filter order.</span>
+                                <span class="accordion-icon"></span>
+                            </div>
+                            <div class="accordion-content">
+                                * **FIR Zeros**: An FIR filter only has zeros (poles are fixed at the origin \(z=0\)). To create a sharp transition roll-off, it must use many zeros to shape the frequency response, requiring a high filter order.
+                                * **IIR Poles**: An IIR filter contains both poles and zeros. Placing poles close to the unit circle (inside \(|z|=1\)) creates sharp resonances (peaks) that can drop off very rapidly to zero. This active pole-shaping allows the filter to achieve extremely sharp transitions with very few coefficients, resulting in a much lower order.
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <span class="accordion-title">Checkpoint 2: Prove that the pole at \(z=1\) in an \(N\)-point Moving Average filter does not cause instability.</span>
+                                <span class="accordion-icon"></span>
+                            </div>
+                            <div class="accordion-content">
+                                The system function of the moving average filter is:
+                                \[H(z) = \frac{1}{N} \left( \frac{1 - z^{-N}}{1 - z^{-1}} \right)\]
+                                Evaluating the numerator at \(z=1\) yields \(1 - 1^{-N} = 0\). Since both numerator and denominator vanish at \(z=1\), we apply L'Hôpital's rule:
+                                \[\lim_{z \to 1} H(z) = \lim_{z \to 1} \frac{\frac{d}{dz}(1 - z^{-N})}{\frac{d}{dz}(N - N z^{-1})} = \lim_{z \to 1} \frac{N z^{-N-1}}{N z^{-2}} = 1\]
+                                Thus, the pole at \(z=1\) is mathematically canceled by the zero at \(z=1\), leaving only \(N-1\) poles at the origin \(z=0\). Since all active poles are at \(z=0\) (which is inside the unit circle), the system is stable.
+                            </div>
+                        </div>
+                    </section>
                 </div> <!-- End of l21-page -->
 
                 <div id="l22-page" class="lecture-page" style="display: none;">
-                    <!-- L22 Section 1: Lecture Plan -->
+<!-- L22 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5260,10 +5378,9 @@ ight)\)</td>
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l22-page -->
 
-                <div id="l23-page" class="lecture-page" style="display: none;">
-                    <!-- L23 Section 1: Lecture Plan -->
+                    <!-- L22 Advanced Windows: Hamming, Blackman & Kaiser Theory & Sandbox -->
+<!-- L23 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5409,10 +5526,10 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l23-page -->
+                </div> <!-- End of l22-page -->
 
-                <div id="l24-page" class="lecture-page" style="display: none;">
-                    <!-- L24 Section 1: Lecture Plan -->
+                <div id="l23-page" class="lecture-page" style="display: none;">
+<!-- L23 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5460,7 +5577,7 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                         </div>
                     </section>
 
-                    <!-- L24 Section 2: Frequency Sampling Sandbox -->
+                    <!-- L23 Section 2: Frequency Sampling Sandbox -->
                     <section class="card">
                         <div class="card-title">FIR Frequency-Sampling Filter Design Sandbox</div>
                         <p class="theory-text">
@@ -5522,7 +5639,7 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                         </div>
                     </section>
 
-                    <!-- L24 Section 3: Checkpoints -->
+                    <!-- L23 Section 3: Checkpoints -->
                     <section class="card">
                         <div class="card-title">Interactive Lecture Checkpoints</div>
                         
@@ -5550,157 +5667,10 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l24-page -->
+                </div> <!-- End of l23-page -->
 
-                <div id="l25-page" class="lecture-page" style="display: none;">
-                    <!-- L25 Section 1: Lecture Plan -->
-                    <section class="card">
-                        <div class="card-title">Lecture Plan &amp; Timing</div>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="time-slot">00:00 - 10:00</div>
-                                <div class="timeline-desc">Welcome: Architectural comparison. Non-recursive (FIR) vs. recursive (IIR) filtering systems.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="time-slot">10:00 - 25:00</div>
-                                <div class="timeline-desc">Moving Average (MA) Filter: Z-transform poles and zeros, mathematical cancellation, and Dirichlet responses.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="time-slot">25:00 - 35:00</div>
-                                <div class="timeline-desc">FIR vs IIR Table: detailed comparison of phase linearity, stability, filter orders, and quantization errors.</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="time-slot">35:00 - 40:00</div>
-                                <div class="timeline-desc">Interactive MA pole-zero placement sandbox, checkpoints, and summary.</div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="card">
-                        <div class="card-title">Core Theory: Moving-Average Filters &amp; FIR vs. IIR Comparison</div>
-                        <div class="theory-text">
-                            Moving average (MA) filters are the most common simple FIR smoothing filters. Understanding the structural trade-offs between FIR and IIR architectures is central to system-level DSP design.
-                        </div>
-
-                        <div class="math-card">
-                            <strong>Moving-Average Filter Theory</strong>
-                            \[ y[n] = rac{1}{M} \sum_{k=0}^{M-1} x[n-k] \implies H(z) = rac{1 - z^{-M}}{M(1 - z^{-1})} \]
-                            \[ H(e^{j\omega}) = rac{1}{M} rac{\sin(\omega M / 2)}{\sin(\omega / 2)} e^{-j\omega(M-1)/2} \]
-                            The zeros are located on the unit circle at \(z_k = e^{j 2\pi k / M}\) for \(k = 1, 2, \dots, M-1\). The pole at \(z=1\) cancels the zero at \(z=1\).
-                        </div>
-
-                        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:10px;">
-                            <thead>
-                                <tr style="background-color: #0f172a; text-align: left;">
-                                    <th style="padding: 8px; border: 1px solid #334155;">Criteria</th>
-                                    <th style="padding: 8px; border: 1px solid #334155;">FIR Filter</th>
-                                    <th style="padding: 8px; border: 1px solid #334155;">IIR Filter</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background-color: #1e293b;">
-                                    <td style="padding: 8px; border: 1px solid #334155;">Phase Linearity</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Exact strictly linear phase available</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Non-linear phase (phase distortion)</td>
-                                </tr>
-                                <tr style="background-color: #0f172a;">
-                                    <td style="padding: 8px; border: 1px solid #334155;">Stability</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Inherently stable (all poles at \(z=0\))</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Feedback poles can shift outside \(|z|=1\)</td>
-                                </tr>
-                                <tr style="background-color: #1e293b;">
-                                    <td style="padding: 8px; border: 1px solid #334155;">Filter Order / Efficiency</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">High order \(N\) required for sharp cutoff</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Much lower order \(N\) (5\(\times\) to 10\(\times\) fewer MACs)</td>
-                                </tr>
-                                <tr style="background-color: #0f172a;">
-                                    <td style="padding: 8px; border: 1px solid #334155;">Limit Cycles</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Free from feedback limit cycles</td>
-                                    <td style="padding: 8px; border: 1px solid #334155;">Susceptible to overflow &amp; deadband oscillations</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-
-                    <!-- L25 Section 2: Moving Average Sandbox -->
-                    <section class="card">
-                        <div class="card-title">Moving Average Filter Sandbox &amp; Z-Plane</div>
-                        <p class="theory-text">
-                            Analyze the system function of the MA filter: 
-                            \(H(z) = \frac{1 - z^{-N}}{N(1 - z^{-1})}\).
-                            Observe the distribution of poles and zeros on the Z-Plane (left plot). 
-                            Adjust the filter length \(N\). Notice that the zero at \(z=1\) is mathematically canceled by the pole at \(z=1\), 
-                            which keeps the filter stable and maintains a passband gain of \(1.0\) at \(\omega = 0\). 
-                            The right plot displays the continuous magnitude response \(|H(e^{j\omega})|\) (Dirichlet kernel).
-                        </p>
-
-                        <div class="sandbox-grid" style="grid-template-columns: 1fr 1fr 280px; gap: 20px;">
-                            <!-- Column 1: Z-plane plot -->
-                            <div class="plot-container" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-                                <h4>Z-Plane Pole-Zero Plot</h4>
-                                <canvas id="canvas-l25-zplane" style="width: 100%; height: 230px;"></canvas>
-                            </div>
-
-                            <!-- Column 2: Magnitude Response -->
-                            <div class="plot-container" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-                                <h4>Magnitude Response</h4>
-                                <canvas id="canvas-l25-response" style="width: 100%; height: 230px;"></canvas>
-                            </div>
-
-                            <!-- Column 3: Controls -->
-                            <div class="controls-panel">
-                                <h3>Moving Average Settings</h3>
-                                <hr style="border-color: var(--border-color); margin: 8px 0 12px 0;">
-
-                                <div class="control-group">
-                                    <label>Filter Length \(N\): <span id="val-l25-n" class="control-val">8</span></label>
-                                    <input type="range" id="slider-l25-n" min="2" max="32" value="8" step="1">
-                                </div>
-
-                                <div class="math-card" style="margin-top: 25px; font-size: 0.72rem; line-height: 1.6;">
-                                    <strong>Filter Analysis:</strong>
-                                    <div id="val-l25-metrics" style="margin-top: 5px; font-family: monospace;">
-                                        Poles at Origin: 7<br>
-                                        Zeros on Circle: 7<br>
-                                        First Null: 0.25 \(\pi\) rad
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- L25 Section 3: Checkpoints -->
-                    <section class="card">
-                        <div class="card-title">Interactive Lecture Checkpoints</div>
-                        
-                        <div class="accordion">
-                            <div class="accordion-header">
-                                <span class="accordion-title">Checkpoint 1: Explain how an IIR filter can meet the same magnitude specifications as an FIR filter but with a much lower filter order.</span>
-                                <span class="accordion-icon"></span>
-                            </div>
-                            <div class="accordion-content">
-                                * **FIR Zeros**: An FIR filter only has zeros (poles are fixed at the origin \(z=0\)). To create a sharp transition roll-off, it must use many zeros to shape the frequency response, requiring a high filter order.
-                                * **IIR Poles**: An IIR filter contains both poles and zeros. Placing poles close to the unit circle (inside \(|z|=1\)) creates sharp resonances (peaks) that can drop off very rapidly to zero. This active pole-shaping allows the filter to achieve extremely sharp transitions with very few coefficients, resulting in a much lower order.
-                            </div>
-                        </div>
-
-                        <div class="accordion">
-                            <div class="accordion-header">
-                                <span class="accordion-title">Checkpoint 2: Prove that the pole at \(z=1\) in an \(N\)-point Moving Average filter does not cause instability.</span>
-                                <span class="accordion-icon"></span>
-                            </div>
-                            <div class="accordion-content">
-                                The system function of the moving average filter is:
-                                \[H(z) = \frac{1}{N} \left( \frac{1 - z^{-N}}{1 - z^{-1}} \right)\]
-                                Evaluating the numerator at \(z=1\) yields \(1 - 1^{-N} = 0\). Since both numerator and denominator vanish at \(z=1\), we apply L'Hôpital's rule:
-                                \[\lim_{z \to 1} H(z) = \lim_{z \to 1} \frac{\frac{d}{dz}(1 - z^{-N})}{\frac{d}{dz}(N - N z^{-1})} = \lim_{z \to 1} \frac{N z^{-N-1}}{N z^{-2}} = 1\]
-                                Thus, the pole at \(z=1\) is mathematically canceled by the zero at \(z=1\), leaving only \(N-1\) poles at the origin \(z=0\). Since all active poles are at \(z=0\) (which is inside the unit circle), the system is stable.
-                            </div>
-                        </div>
-                    </section>
-                </div> <!-- End of l25-page -->
-
-                <div id="l26-page" class="lecture-page" style="display: none;">
-                    <!-- L26 Section 1: Lecture Plan -->
+                <div id="l24-page" class="lecture-page" style="display: none;">
+<!-- L24 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5723,7 +5693,7 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                         </div>
                     </section>
 
-                    <!-- L26 Section 1: Theory & Key Derivations -->
+                    <!-- L24 Section 1: Theory & Key Derivations -->
                     <section class="card">
                         <div class="card-title">Core Theory: Analog Filter Prototypes (Butterworth &amp; Chebyshev)</div>
                         <div class="theory-text">
@@ -5745,7 +5715,7 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                         </div>
                     </section>
 
-                    <!-- L26 Section 2: Analog Prototype Sandbox -->
+                    <!-- L24 Section 2: Analog Prototype Sandbox -->
                     <section class="card">
                         <div class="card-title">Analog Filter Prototype Sandbox (s-Plane)</div>
                         <p class="theory-text">
@@ -5802,7 +5772,7 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                         </div>
                     </section>
 
-                    <!-- L26 Section 3: Checkpoints -->
+                    <!-- L24 Section 3: Checkpoints -->
                     <section class="card">
                         <div class="card-title">Interactive Lecture Checkpoints</div>
                         
@@ -5830,10 +5800,8 @@ ight)}{I_0(eta)}, \qquad \tau = rac{N-1}{2} \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l26-page -->
 
-                <div id="l27-page" class="lecture-page" style="display: none;">
-                    <!-- L27 Section 1: Lecture Plan -->
+<!-- L24 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5883,7 +5851,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L27 Section 2: Impulse Invariance Sandbox -->
+                    <!-- L24 Section 2: Impulse Invariance Sandbox -->
                     <section class="card">
                         <div class="card-title">Impulse Invariance Sandbox (s-to-z Pole Mapping &amp; Aliasing)</div>
                         <p class="theory-text">
@@ -5940,7 +5908,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L27 Section 3: Checkpoints -->
+                    <!-- L24 Section 3: Checkpoints -->
                     <section class="card">
                         <div class="card-title">Interactive Lecture Checkpoints</div>
                         
@@ -5970,10 +5938,10 @@ ight) \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l27-page -->
+                </div> <!-- End of l24-page -->
 
-                <div id="l28-page" class="lecture-page" style="display: none;">
-                    <!-- L28 Section 1: Lecture Plan -->
+                <div id="l25-page" class="lecture-page" style="display: none;">
+<!-- L25 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -5996,7 +5964,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L28 Section 1.5: Core Theory -->
+                    <!-- L25 Section 1.5: Core Theory -->
                     <section class="card">
                         <div class="card-title">Core Theory: Bilinear Transformation (BLT) Method</div>
                         <div class="theory-text">
@@ -6020,7 +5988,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L28 Section 2: Bilinear Sandbox -->
+                    <!-- L25 Section 2: Bilinear Sandbox -->
                     <section class="card">
                         <div class="card-title">Bilinear Transformation Sandbox &amp; Warping</div>
                         <p class="theory-text">
@@ -6071,7 +6039,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L28 Section 3: Checkpoints -->
+                    <!-- L25 Section 3: Checkpoints -->
                     <section class="card">
                         <div class="card-title">Interactive Lecture Checkpoints</div>
                         
@@ -6099,10 +6067,8 @@ ight) \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l28-page -->
 
-                <div id="l29-page" class="lecture-page" style="display: none;">
-                    <!-- L29 Section 1: Lecture Plan -->
+<!-- L25 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -6125,7 +6091,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L29 Theory Section -->
+                    <!-- L25 Theory Section -->
                     <section class="card">
                         <div class="card-title">Core Theory: Matched Z-Transform &amp; Spectral Transformations</div>
                         <div class="theory-text">
@@ -6146,7 +6112,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L29 Section 2: Spectral Transformation Sandbox -->
+                    <!-- L25 Section 2: Spectral Transformation Sandbox -->
                     <section class="card">
                         <div class="card-title">Digital-to-Digital Spectral Transformation Sandbox</div>
                         <p class="theory-text">
@@ -6200,7 +6166,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L29 Section 3: Checkpoints -->
+                    <!-- L25 Section 3: Checkpoints -->
                     <section class="card">
                         <div class="card-title">Interactive Lecture Checkpoints</div>
                         
@@ -6232,10 +6198,10 @@ ight) \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l29-page -->
+                </div> <!-- End of l25-page -->
 
-                <div id="l30-page" class="lecture-page" style="display: none;">
-                    <!-- L30 Section 1: Lecture Plan -->
+                <div id="l26-page" class="lecture-page" style="display: none;">
+<!-- L26 Section 1: Lecture Plan -->
                     <section class="card">
                         <div class="card-title">Lecture Plan &amp; Timing</div>
                         <div class="timeline">
@@ -6303,7 +6269,7 @@ ight) \]
                                     <td style="padding: 8px; border: 1px solid #334155;">CO4: Synthesize robust digital filter structures and analyze quantization</td>
                                 </tr>
                                 <tr style="background-color: #0f172a;">
-                                    <td style="padding: 8px; border: 1px solid #334155;">Unit IV (L21–L30)</td>
+                                    <td style="padding: 8px; border: 1px solid #334155;">Unit IV (L21–L26)</td>
                                     <td style="padding: 8px; border: 1px solid #334155;">FIR Windows (Hann/Hamming/Kaiser), Frequency Sampling, Analog Prototypes, BLT, MZT, ANC/LMS</td>
                                     <td style="padding: 8px; border: 1px solid #334155;">CO5: Design FIR and IIR digital filters and apply them to engineering systems</td>
                                 </tr>
@@ -6311,7 +6277,7 @@ ight) \]
                         </table>
                     </section>
 
-        <!-- L30 Section 2: Adaptive Noise Cancellation Sandbox -->
+        <!-- L26 Section 2: Adaptive Noise Cancellation Sandbox -->
                     <section class="card">
                         <div class="card-title">Adaptive Noise Cancellation (ANC) Simulator</div>
                         <p class="theory-text">
@@ -6371,7 +6337,7 @@ ight) \]
                         </div>
                     </section>
 
-                    <!-- L30 Section 3: Checkpoints -->
+                    <!-- L26 Section 3: Checkpoints -->
                     <section class="card">
                         <div class="card-title">Interactive Lecture Checkpoints</div>
                         
@@ -6397,7 +6363,7 @@ ight) \]
                             </div>
                         </div>
                     </section>
-                </div> <!-- End of l30-page -->
+                </div> <!-- End of l26-page -->
             </div>
         </main>
     </div>
