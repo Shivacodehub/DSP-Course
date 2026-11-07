@@ -1179,6 +1179,67 @@
                             </div>
                         </div>
                     </section>
+
+                    <!-- L2: Learning Beyond the Lecture (initial simple version) -->
+                    <section class="card learning-beyond-card" id="l2-learning-beyond">
+                        <div class="learning-beyond-heading">
+                            <div>
+                                <p class="learning-eyebrow">LEARN • APPLY • EXPLORE</p>
+                                <div class="card-title">Learning Beyond the Lecture</div>
+                                <p class="theory-text">
+                                    Use these activities to connect convolution and LTI systems with practical engineering problems.
+                                </p>
+                            </div>
+                            <span class="learning-tag">Lecture 2</span>
+                        </div>
+
+                        <div class="learning-grid">
+                            <article class="learning-item">
+                                <div class="learning-item-title">
+                                    <span class="learning-number">01</span>
+                                    <h3>Think and Check</h3>
+                                </div>
+                                <p><strong>Concept question:</strong> Why does the output of a finite-length input passing through a finite-length LTI system also have finite length?</p>
+                                <p class="learning-hint">Think about the range of indices for which both \(x[k]\) and \(h[n-k]\) are non-zero.</p>
+                            </article>
+
+                            <article class="learning-item">
+                                <div class="learning-item-title">
+                                    <span class="learning-number">02</span>
+                                    <h3>Problem to Solve</h3>
+                                </div>
+                                <p>For \(x[n]=\{1,2,1\}\) and \(h[n]=\{1,1\}\), with both sequences starting at \(n=0\), calculate the linear convolution \(y[n]\).</p>
+                                <p class="learning-hint">Show the overlap at each output index before adding the products.</p>
+                            </article>
+
+                            <article class="learning-item">
+                                <div class="learning-item-title">
+                                    <span class="learning-number">03</span>
+                                    <h3>EEE Application</h3>
+                                </div>
+                                <p>A digital smoothing filter can reduce rapid fluctuations in a sampled voltage or sensor signal. Convolution combines the present and neighbouring samples using the filter coefficients.</p>
+                                <p class="learning-hint">Explore how changing the coefficients of a moving-average filter changes the smoothness and delay of the output.</p>
+                            </article>
+
+                            <article class="learning-item">
+                                <div class="learning-item-title">
+                                    <span class="learning-number">04</span>
+                                    <h3>Explore Further</h3>
+                                </div>
+                                <p>Use the convolution simulator above. Change the input sequence and impulse response, then compare the output with your hand calculation.</p>
+                                <p class="learning-hint">Investigation: What happens to the output length when the impulse response length increases?</p>
+                            </article>
+                        </div>
+
+                        <div class="learning-contribution">
+                            <div>
+                                <h3>Have a useful problem or observation?</h3>
+                                <p>Bring a challenging question, an alternative derivation, a common mistake or a laboratory observation to the DSP Knowledge Bank.</p>
+                            </div>
+                            <span class="learning-coming-soon">Student contributions — next step</span>
+                        </div>
+                    </section>
+
                 </div> <!-- End of l2-page -->
 
                 <div id="l3-page" class="lecture-page" style="display: none;">
