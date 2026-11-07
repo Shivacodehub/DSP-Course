@@ -730,3 +730,127 @@ body.sidebar-active .sidebar-overlay {
         display: none; /* Hide download PDF on small screens to save space */
     }
 }
+
+/* Learning Beyond the Lecture — initial reusable styles */
+.learning-beyond-card {
+    margin-top: 24px;
+    border: 1px solid rgba(13, 213, 197, 0.22);
+    background: linear-gradient(145deg, rgba(13, 213, 197, 0.045), rgba(99, 102, 241, 0.035));
+}
+
+.learning-beyond-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.learning-eyebrow {
+    color: var(--color-teal);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    margin-bottom: 7px;
+}
+
+.learning-tag,
+.learning-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 6px 11px;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    white-space: nowrap;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.learning-item {
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: rgba(10, 15, 27, 0.58);
+}
+
+.learning-item-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.learning-number {
+    display: inline-grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    flex: 0 0 29px;
+    border-radius: 8px;
+    color: var(--color-teal);
+    background: rgba(13, 213, 197, 0.1);
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.learning-item h3,
+.learning-contribution h3 {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.learning-item p,
+.learning-contribution p {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    line-height: 1.65;
+    margin-top: 7px;
+}
+
+.learning-item p strong {
+    color: var(--text-main);
+}
+
+.learning-item .learning-hint {
+    color: var(--text-dim);
+    font-size: 0.77rem;
+    border-left: 2px solid var(--color-teal);
+    padding-left: 10px;
+    margin-top: 12px;
+}
+
+.learning-contribution {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-top: 16px;
+    padding: 17px;
+    border: 1px dashed rgba(13, 213, 197, 0.3);
+    border-radius: 10px;
+    background: rgba(13, 213, 197, 0.035);
+}
+
+.learning-contribution p {
+    max-width: 680px;
+}
+
+@media (max-width: 760px) {
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-beyond-heading,
+    .learning-contribution {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
